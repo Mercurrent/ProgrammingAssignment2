@@ -4,16 +4,15 @@
 
 cache<-NULL
 
-## Creates a cached for a matrix.
-
+## Creates a cache for an inversed matrix.
 makeCacheMatrix <- function(x = matrix()) {
-  cache<-ginv(x)
+  cache<-solve(x)
 }
 
 
 ## Takes a matrix out of the cache and return inverse of it.
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  ## Returns a matrix that is the inverse of 'x'
   if(!is.null(cache)) {
     message("getting cached data")
     return(cache)
